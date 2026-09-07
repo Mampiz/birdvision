@@ -146,6 +146,11 @@ export default function LiveCamsPage() {
 			return;
 		}
 
+		// Switching camera has to clear what belonged to the previous one before
+		// the new stream attaches, or the overlay briefly draws the old boxes on
+		// the new picture. This effect owns the <video> element, so the reset
+		// belongs here rather than in a render-time derivation.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		setDetections([]);
 		setStats({lastMs: 0, fps: 0, dets: 0});
 		setPlayState("loading");
