@@ -67,11 +67,12 @@ export const WavyBackground = ({children, className, containerClassName, colors,
 	}, []);
 	/* eslint-enable react-hooks/exhaustive-deps */
 
-	const [isSafari, setIsSafari] = useState(false);
-	useEffect(() => {
-		// I'm sorry but i have got to support it on safari.
-		setIsSafari(typeof window !== "undefined" && navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome"));
-	}, []);
+	// I'm sorry but i have got to support it on safari. Computed once as the
+	// initial state: the user agent cannot change while the component is mounted,
+	// so an effect would only buy an extra render.
+	const [isSafari] = useState(
+		() => typeof window !== "undefined" && navigator.userAgent.includes("Safari") && !navigator.userAgent.includes("Chrome")
+	);
 
 	return (
 		<div className={cn("h-screen flex flex-col items-center justify-center", containerClassName)}>

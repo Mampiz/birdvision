@@ -56,6 +56,10 @@ function FeedPage() {
 	}, [limit, token]);
 
 	useEffect(() => {
+		// Fetching the first page is the effect's whole job: it synchronises this
+		// component with the API. The setState the rule objects to is load's own
+		// setLoading(true), which is what tells the user the request started.
+		// eslint-disable-next-line react-hooks/set-state-in-effect
 		load(0);
 	}, [load]);
 
