@@ -1,0 +1,39 @@
+version: 2
+
+updates:
+  # Actions go stale quietly, and a pinned action with a known issue is a
+  # supply-chain problem in its own right.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "ci"
+
+  - package-ecosystem: pip
+    directory: /backend
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "deps"
+
+  - package-ecosystem: npm
+    directory: /frontend/tfg-tailwind
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "deps"
+
+  - package-ecosystem: docker
+    directory: /backend
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "build"
+
+  - package-ecosystem: docker
+    directory: /nginx-rtmp
+    schedule:
+      interval: weekly
+    commit-message:
+      prefix: "build"
