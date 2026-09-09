@@ -982,7 +982,7 @@ Honest boundaries of the current system:
 - Annotated videos live on the container filesystem with a 24-hour TTL — ephemeral on Fargate, unshared between tasks, and a hard blocker for horizontal scaling.
 - Single gunicorn worker: throughput per task is limited by `MAX_CONCURRENT_JOBS` and the frame-inference pool.
 - HLS adds inherent latency (1 s fragments plus a deliberate 3 s start delay), so LiveCams is *near*-real-time, not real-time.
-- No Alembic migrations, no automated tests, no CI/CD, no infrastructure-as-code in the repository.
+- No Alembic migrations and no infrastructure-as-code in the repository. CI lints and runs the test suite on every push, but there is no automated deployment.
 - Live-stream discovery endpoints are unauthenticated.
 
 ---
