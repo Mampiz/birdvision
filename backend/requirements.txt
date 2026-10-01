@@ -1,12 +1,12 @@
 fastapi>=0.141.1
-uvicorn[standard]>=0.52.4
+uvicorn[standard]>=0.54.0
 gunicorn>=26.2.0
 
 python-multipart>=0.0.32
 pydantic>=2.13.5
 
-sqlalchemy>=2.0.52
-psycopg2-binary>=2.9.12
+sqlalchemy>=2.1.1
+psycopg2-binary>=2.9.13
 
 passlib[argon2]>=1.7.4
 argon2-cffi>=23.1.0
@@ -14,7 +14,7 @@ python-jose[cryptography]>=3.5.0
 
 python-dotenv>=1.2.3
 
-numpy>=2.5.2
+numpy>=2.5.3
 opencv-python-headless>=5.0.0.93
 
-ultralytics>=8.4.140
+ultralytics>=8.4.164
