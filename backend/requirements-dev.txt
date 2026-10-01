@@ -11,14 +11,14 @@
 fastapi>=0.141.1
 python-multipart>=0.0.32
 pydantic>=2.13.5
-sqlalchemy>=2.0.52
+sqlalchemy>=2.1.1
 passlib[argon2]>=1.7.4
 argon2-cffi>=23.1.0
 python-jose[cryptography]>=3.5.0
 python-dotenv>=1.2.3
-numpy>=2.5.2
+numpy>=2.5.3
 
 pytest>=9.1.1
 pytest-asyncio>=1.4.0
 httpx>=0.28.1
-ruff>=0.16.6
+ruff>=0.16.9
